@@ -1,2 +1,2 @@
-# cpp
-# Striver's SDE sheet
+cpp
+Striver's SDE sheet

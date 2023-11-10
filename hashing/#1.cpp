@@ -10,12 +10,10 @@ int countfreq(int num, int a[], int n)
         hashArr[i] = 0;
 
     for (int i = 0; i < n; i++)
-    {
-        hashArr[a[i]]++;
-    }
+        hashArr[a[i]]++; // for chars it will be s[i]-'a'!
 
     int frequency = hashArr[num];
-    delete[] hashArr; // Deallocate the dynamically allocated array
+    delete[] hashArr;
 
     return frequency;
 }

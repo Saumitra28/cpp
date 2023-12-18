@@ -4,6 +4,7 @@ using namespace std;
 // rotating array by k places (optimal aproach)
 void rotatearrbyk(int a[], int n, int k)
 {
+    k=k%n;//if k is more than n !
     reverse(a, a + k);
     reverse(a + k, a + n);
     reverse(a, a + n);

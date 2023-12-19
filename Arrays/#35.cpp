@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 //only for +ves and zeros
-//*
 int maxsubarrlength(int a[], int n, int k)
 {
     int right = 0;

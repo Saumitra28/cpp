@@ -28,7 +28,7 @@ int main() {
     vector<int> arr = {2, 0, 1, 2, 0, 1, 0, 1, 2};
     vector<int> result = sort01and2sarr(arr);
 
-    // Print the sorted array
+
     for (int num : result) {
         cout << num << " ";
     }

@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+//optimal
 //only for +ves and zeros
 int maxsubarrlength(int a[], int n, int k)
 {

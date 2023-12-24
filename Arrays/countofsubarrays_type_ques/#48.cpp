@@ -4,21 +4,30 @@
 //optimal approach via presum concept used before in one subarray ques too !
 //reverse eng waala
 using namespace std;
-int findAllSubarraysWithGivenSum(vector<int> &arr, int k)
+int findAllSubarraysWithGivenSum(vector<int> &nums, int k)
 {
 
-    unordered_map<int, int> mp;
-    mp[0] = 1;
-    int presum = 0;
-    int cnt = 0;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        presum += arr[i];
-        int remove = presum - k;
-        cnt += mp[remove];
-        mp[remove]++;
-    }
-    return cnt;
+    int n = nums.size();
+        int sum = 0;
+        int cnt = 0;
+
+        // Create a hashmap to store cumulative sums and their frequencies
+        unordered_map<int, int> cumulativeSums;
+        cumulativeSums[0] = 1;  // Include the empty subarray
+
+        for (int i = 0; i < n; i++) {
+            sum += nums[i];
+
+            // Check if there exists a cumulative sum (sum - k) in the hashmap
+            if (cumulativeSums.find(sum - k) != cumulativeSums.end()) {
+                cnt += cumulativeSums[sum - k];
+            }
+
+            // Update the hashmap with the current cumulative sum
+            cumulativeSums[sum]++;
+        }
+
+        return cnt;
 }
 int main()
 {
